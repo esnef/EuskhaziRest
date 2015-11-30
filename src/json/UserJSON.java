@@ -6,6 +6,8 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import model.Exam;
+
 import java.util.List;
 
 
@@ -59,13 +61,27 @@ public class UserJSON implements Serializable {
 	public void setPass(String pass) {
 		this.pass = pass;
 	}
-	/*
-	public ExamsJSON getExamsJSON(){
-		return this.examsJSON;
-	}
 	
-	public void setExamsJSON(ExamsJSON examsJSON){
-		this.examsJSON=examsJSON;
+	public List<ExamJSON> getExams() {
+		return this.examJSONList;
+	}
+
+	public void setExams(List<ExamJSON> examJSONList) {
+		this.examJSONList = examJSONList;
+	}
+	/*
+	public ExamJSON addExam(ExamJSON examJSONList) {
+		getExams().add(examJSONList);
+		examJSONList.setUser(this);
+
+		return examJSONList;
+	}
+
+	public ExamJSON removeExam(ExamJSON examJSONList) {
+		getExams().remove(examJSONList);
+		examJSONList.setUser(null);
+
+		return examJSONList;
 	}
 	*/
 	

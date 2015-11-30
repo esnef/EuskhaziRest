@@ -20,9 +20,9 @@ public class ExamJSON implements Serializable {
 	private String drafting;
 	@XmlElement
 	private String level;
-	@XmlElement
+	@XmlElement(name="numExam")
 	private int numExams;
-	@XmlElement
+	@XmlElement(name="result")
 	private double resultExams;
 	@XmlElement
 	private String typeExam;

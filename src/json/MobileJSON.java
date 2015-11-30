@@ -48,6 +48,11 @@ public class MobileJSON implements Serializable {
 	public void setMobilesMAC(String mobilesMAC) {
 		this.mobilesMAC = mobilesMAC;
 	}
+	
+	public String getMobilesMAC() {
+		return mobilesMAC;
+	}
+	
 	/*
 	public UsersJSON getUsersJSON(){
 		return this.usersJSON;
@@ -75,6 +80,8 @@ public class MobileJSON implements Serializable {
 		getUsers().remove(user);
 		return user;
 	}
+	
+	
 
 	
 

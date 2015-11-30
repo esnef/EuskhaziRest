@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
 
 
@@ -37,6 +38,14 @@ public class Exam implements Serializable {
 	private User user;
 
 	public Exam() {
+	}
+	public Exam(String level,int numExams,double resultExams,String typeExam,String voiceFileName,String drafting) {
+		this.drafting=drafting;
+		this.level=level;
+		this.numExams=numExams;
+		this.resultExams=resultExams;
+		this.typeExam=typeExam;
+		this.voiceFileName=voiceFileName;
 	}
 
 	public int getIdexams() {

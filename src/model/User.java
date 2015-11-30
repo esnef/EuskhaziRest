@@ -1,8 +1,12 @@
 package model;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
 import java.util.List;
+
+import json.ExamJSON;
 
 
 /**
@@ -27,7 +31,9 @@ public class User implements Serializable {
 	private String pass;
 
 	//bi-directional many-to-one association to Exam
-	@OneToMany(mappedBy="user",cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+	//@OneToMany(mappedBy="user",cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+	//@OneToMany(mappedBy="user",cascade = {CascadeType.PERSIST})
+	@OneToMany(mappedBy="user",cascade = {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.REMOVE} )
 	private List<Exam> exams;
 
 	//bi-directional many-to-one association to Mobile
@@ -36,6 +42,11 @@ public class User implements Serializable {
 	private Mobile mobile;
 
 	public User() {
+	}
+	public User(String name,String pass,List<Exam> exams) {
+		this.name=name;
+		this.pass=pass;
+		this.exams=exams;
 	}
 
 	public int getIdusers() {
